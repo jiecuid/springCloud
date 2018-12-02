@@ -7,12 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="tensquare_base" />
+        <module name="tensquare_commonland" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="common" target="1.8" />
       <module name="tensquare_base" target="1.8" />
       <module name="tensquare_common" target="1.8" />
+      <module name="tensquare_commonland" target="1.8" />
       <module name="tensquare_coommon" target="1.8" />
       <module name="tensquare_parent" target="1.8" />
     </bytecodeTargetLevel>

@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>tensquare_base</module>
+        <module>tensquare_commonland</module>
     </modules>
     <packaging>pom</packaging>
 
