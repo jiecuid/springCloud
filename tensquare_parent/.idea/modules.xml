@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/tensquare_base/tensquare_base.iml" filepath="$PROJECT_DIR$/tensquare_base/tensquare_base.iml" />
-      <module fileurl="file://$PROJECT_DIR$/tensquare_commonland/tensquare_commonland.iml" filepath="$PROJECT_DIR$/tensquare_commonland/tensquare_commonland.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tensquare_common/tensquare_common.iml" filepath="$PROJECT_DIR$/tensquare_common/tensquare_common.iml" />
       <module fileurl="file://$PROJECT_DIR$/tensquare_parent.iml" filepath="$PROJECT_DIR$/tensquare_parent.iml" />
     </modules>
   </component>

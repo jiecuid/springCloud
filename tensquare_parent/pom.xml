@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>tensquare_base</module>
-        <module>tensquare_commonland</module>
+        <module>tensquare_common</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -46,20 +46,21 @@
             <artifactId>spring-boot-devtools</artifactId>
         </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
-        </dependency>
+        </dependency>-->
     </dependencies>
     <!--这个插件，可以将应用打包成一个可执行的jar包-->
-    <build>
+   <!-- <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-        </plugins>    </build>
+        </plugins>
+    </build>-->
     <!--写不写都行，因为指定的就是jdk1.8-->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -67,7 +68,7 @@
         <java.version>1.8</java.version>
     </properties>
     <!--Spring仓库的地址，用到spring的jar会去spring的官网下载-->
-    <repositories>
+    <!--<repositories>
         <repository>
             <id>spring-snapshots</id>
             <name>Spring Snapshots</name>
@@ -85,7 +86,7 @@
             </snapshots>
         </repository>
     </repositories>
-    <!--Spring仓库的地址，用到spring的插件会去spring的官网下载-->
+    &lt;!&ndash;Spring仓库的地址，用到spring的插件会去spring的官网下载&ndash;&gt;
     <pluginRepositories>
         <pluginRepository>
             <id>spring-snapshots</id>
@@ -103,7 +104,7 @@
                 <enabled>false</enabled>
             </snapshots>
         </pluginRepository>
-    </pluginRepositories>
+    </pluginRepositories>-->
 
 
 </project>
