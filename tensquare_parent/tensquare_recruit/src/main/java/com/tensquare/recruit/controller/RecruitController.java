@@ -4,12 +4,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.tensquare.recruit.pojo.Recruit;
 import com.tensquare.recruit.service.RecruitService;
@@ -29,6 +24,24 @@ public class RecruitController {
 
 	@Autowired
 	private RecruitService recruitService;
+
+	/**
+	 * 查询最新推荐职位列表
+	 * @return
+	 */
+	@GetMapping(value = "/search/recommend")
+	public Result findRecommend(){
+		return new Result(true, StatusCode.OK, "查询成功", recruitService.recommend());
+	}
+
+	/**
+	 * 查询最新职位列表
+	 * @return
+	 */
+	@GetMapping(value = "/search/newlist")
+	public Result findNewList(){
+		return new Result(true, StatusCode.OK, "查询成功", recruitService.newList());
+	}
 	
 	
 	/**

@@ -26,7 +26,7 @@ public class Recruit implements Serializable{
 	private String address;//办公地址
 	private String eid;//企业ID
 	private java.util.Date createtime;//创建日期
-	private String state;//状态
+	private String state;//状态  0：关闭 1:开启  2：推荐
 	private String url;//网址
 	private String label;//标签
 	private String content1;//职位描述

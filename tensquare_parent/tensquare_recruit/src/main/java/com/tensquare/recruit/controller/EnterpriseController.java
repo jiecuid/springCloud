@@ -4,12 +4,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.tensquare.recruit.pojo.Enterprise;
 import com.tensquare.recruit.service.EnterpriseService;
@@ -29,6 +24,17 @@ public class EnterpriseController {
 
 	@Autowired
 	private EnterpriseService enterpriseService;
+
+	/**
+	 *  根据热门状态获取企业列表
+	 * @param ishot
+	 * @return
+	 */
+	@GetMapping(value = "/search/hotlist/{ishot}")
+	public Result findHotEnterprise(@PathVariable String ishot){
+		List<Enterprise> enterpriseList = enterpriseService.findHotEnterprise(ishot);
+		return new Result(true, StatusCode.OK,"查询热门企业列表成功", enterpriseList);
+	}
 	
 	
 	/**

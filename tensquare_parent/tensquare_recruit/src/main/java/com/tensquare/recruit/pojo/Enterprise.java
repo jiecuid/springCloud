@@ -13,11 +13,9 @@ import java.io.Serializable;
 @Table(name="tb_enterprise")
 public class Enterprise implements Serializable{
 
+	private static final long serialVersionUID = 3461246146327880003L;
 	@Id
 	private String id;//ID
-
-
-	
 	private String name;//企业名称
 	private String summary;//企业简介
 	private String address;//企业地址
