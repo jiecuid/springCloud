@@ -1,21 +1,18 @@
 package com.tensquare.qa.service;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Expression;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-import javax.persistence.criteria.Selection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
@@ -38,6 +35,46 @@ public class ProblemService {
 	
 	@Autowired
 	private IdWorker idWorker;
+
+	/**
+	 * 根据标签ID查询最新问题列表
+	 * @param labelId
+	 * @param page
+	 * @param rows
+	 * @return
+	 */
+	public Page<Problem> findNewListByLabel(String labelId , int page, int rows){
+
+		Pageable Pageable = PageRequest.of(page - 1, rows);
+		return problemDao.findNewListByLabel(labelId, Pageable);
+	}
+
+	/**
+	 * 根据标签ID查询最热问题列表
+	 * @param labelId
+	 * @param page
+	 * @param rows
+	 * @return
+	 */
+	public Page<Problem> findHotListByLabel(String labelId , int page, int rows){
+
+		Pageable Pageable = PageRequest.of(page - 1, rows);
+		return problemDao.findHotListByLabel(labelId, Pageable);
+	}
+
+	/**
+	 * 根据标签ID查询等待问题列表
+	 * @param labelId
+	 * @param page
+	 * @param rows
+	 * @return
+	 */
+	public Page<Problem> findWaitListByLabel(String labelId , int page, int rows){
+
+		Pageable Pageable = PageRequest.of(page - 1, rows);
+		return problemDao.findWaitListByLabelId(labelId, Pageable);
+	}
+
 
 	/**
 	 * 查询全部列表

@@ -4,12 +4,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.tensquare.qa.pojo.Problem;
 import com.tensquare.qa.service.ProblemService;
@@ -29,6 +24,48 @@ public class ProblemController {
 
 	@Autowired
 	private ProblemService problemService;
+
+	/**
+	 * 根据标签ID查询最新问题列表
+	 * @param labelId
+	 * @param page
+	 * @param size
+	 * @return
+	 */
+	@GetMapping(value = "/newlist/{labelId}/{page}/{size}")
+	public Result newList(@PathVariable String labelId, @PathVariable int page, @PathVariable int size){
+
+		Page<Problem> pageData = problemService.findNewListByLabel(labelId, page, size);
+		return new Result(true, StatusCode.OK, "查询成功", new PageResult<Problem>(pageData.getTotalElements(), pageData.getContent()));
+	}
+
+	/**
+	 * 根据标签ID查询最热问题列表
+	 * @param labelId
+	 * @param page
+	 * @param size
+	 * @return
+	 */
+	@GetMapping(value = "/hotlist/{labelId}/{page}/{size}")
+	public Result hotList(@PathVariable String labelId, @PathVariable int page, @PathVariable int size){
+
+		Page<Problem> pageData = problemService.findHotListByLabel(labelId, page, size);
+		return new Result(true, StatusCode.OK, "查询成功", new PageResult<Problem>(pageData.getTotalElements(), pageData.getContent()));
+	}
+
+	/**
+	 *根据标签ID查询等待问题列表
+	 * @param labelId
+	 * @param page
+	 * @param size
+	 * @return
+	 */
+	@GetMapping(value = "/waitlist/{labelId}/{page}/{size}")
+	public Result waitList(@PathVariable String labelId, @PathVariable int page, @PathVariable int size){
+
+		Page<Problem> pageData = problemService.findWaitListByLabel(labelId, page, size);
+		return new Result(true, StatusCode.OK, "查询成功", new PageResult<Problem>(pageData.getTotalElements(), pageData.getContent()));
+	}
 	
 	
 	/**
