@@ -1,0 +1,10 @@
+G:\workCode\springCloud\tensquare_parent\tensquare_qa\src\main\java\com\tensquare\qa\pojo\Problem.java
+G:\workCode\springCloud\tensquare_parent\tensquare_qa\src\main\java\com\tensquare\qa\controller\ProblemController.java
+G:\workCode\springCloud\tensquare_parent\tensquare_qa\src\main\java\com\tensquare\qa\dao\ProblemDao.java
+G:\workCode\springCloud\tensquare_parent\tensquare_qa\src\main\java\com\tensquare\qa\controller\ReplyController.java
+G:\workCode\springCloud\tensquare_parent\tensquare_qa\src\main\java\com\tensquare\qa\dao\ReplyDao.java
+G:\workCode\springCloud\tensquare_parent\tensquare_qa\src\main\java\com\tensquare\qa\controller\BaseExceptionHandler.java
+G:\workCode\springCloud\tensquare_parent\tensquare_qa\src\main\java\com\tensquare\qa\QaApplication.java
+G:\workCode\springCloud\tensquare_parent\tensquare_qa\src\main\java\com\tensquare\qa\pojo\Reply.java
+G:\workCode\springCloud\tensquare_parent\tensquare_qa\src\main\java\com\tensquare\qa\service\ProblemService.java
+G:\workCode\springCloud\tensquare_parent\tensquare_qa\src\main\java\com\tensquare\qa\service\ReplyService.java
